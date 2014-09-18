@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dk3_vzz_lp">
+  <title>Indirection to Non-Topic Elements</title>
+  <abstract>
+    <p>DITA through DITA 1.3 provides indirect addressing for topics (keys and key references) but no indirection mechanism for non-topic elements. Without this feature it is impossible to use relationship tables to directly relate non-topic elements. For example, there is no DITA-defined way to use a relationship table to link a figure to a step. This is a recognized feature hole in DITA but the DITA TC decided that it would introduce too much complexity to try to add a general indirect addressing mechanism for non-topic elements to the DITA architecture parallel to (but separate from) the DITA key facility. This paper presents an approach that uses highly-specialized topics to act as indirectors to elements within topics. Using these "indirector topics" it then becomes possible to use relationship tables to relate non-topic elements to each other. This approach requires custom processing of these topics when generating deliverables but does not require any architectural change to DITA itself. While a more complete non-topic-element indirect addressing facility would be ideal, this approach satisfies the general requirement while limiting the complexity of the solution. Because the indirection is through topics there is an inherent fallback behavior for unmodified DITA processors.</p>
+  </abstract>
+  <prolog>
+    <author>W. Eliot Kimber</author>
+    <copyright>
+      <copyryear year="2014"/>
+      <copyrholder>W. Eliot Kimber</copyrholder>
+    </copyright>
+  </prolog>
+  <topic id="topic_krg_zc1_mp">
+    <title>Relationship Tables and Topicrefs</title>
+    <body>
+      <draft-comment author="ekimber"
+        >Talk about relationship tables, the semantics of topicrefs as being limited to linking only to topics, maps, and non-DITA resources and the implications for relating non-topic elements using relationship tables.</draft-comment>
+    </body>
+  </topic>
+  <topic id="topic_mmw_5c1_mp">
+    <title>Indirect Addressing Limitations in DITA 1.3</title>
+    <body>
+      <draft-comment author="ekimber">Talk about topic vs non-topic element addressing, inability to indirect references to element IDs, implications for conref, xref.</draft-comment>
+    </body>
+  </topic>
+  <topic id="topic_w1r_cd1_mp">
+    <title>Proposed Solution: Indirector Topics</title>
+    <body>
+      <p>The solution is to define a specialized topic type that has as it's non-metadata content one or more specialized xref elements, where each xref element must address a non-topic element. Processors can then translate references to the indirector topics to references to the elements referenced by the cross references in the topic body.</p>
+      <p>A typical indirector topic is:<codeblock>&lt;indirector id="topicid">
+  &lt;title>Assembly Illustration&lt;/title>
+  &lt;indirectorBody>
+    &lt;indirectElementRef keyref="topic-123/fig-01"/>
+  &lt;/indirectoryBody>
+&lt;/indirector></codeblock></p>
+      <p>This is an indirection to the element with the ID "fig-01" in the topic bound to the key "topic-123". The key "topic-123" should be a key defined on a navigation topicref so that the cross reference is to a specific use instance of the target element.</p>
+      <p>The topic title can be used as link text or a link preview and will be used normally when normal DITA processing is applied. Thus the title should normally be a meaningful description of the indirector target.</p>
+      <p>The indirector topic type allows normal &lt;prolog> markup and also &lt;data> within the &lt;indirectoryBody> element.</p>
+      <p>For convenience, indirector topics may be grouped within &lt;indirectorSet> topics:<codeblock>&lt;indirectorSet id="topicid">
+  &lt;title>Indirectors for Figures&lt;/title>
+  &lt;indirector id="topic123_fig-01">
+    &lt;title>Assembly Illustration&lt;/title>
+    &lt;indirectorBody>
+      &lt;indirectElementRef keyref="topic-123/fig-01"/>
+    &lt;/indirectoryBody>
+  &lt;/indirector>
+  &lt;indirector id="topic456_fig-01">
+    &lt;title>Removal Illustration&lt;/title>
+    &lt;indirectorBody>
+      &lt;indirectElementRef keyref="topic-456/fig-01"/>
+    &lt;/indirectoryBody>
+  &lt;/indirector>
+&lt;/indirectorSet>  </codeblock></p>
+    </body>
+  </topic>
+  <topic id="topic_jvf_xf1_mp">
+    <title>Using Indirectors From Relationship Tables</title>
+    <body>
+      <p>Because indirector topics are just topics, they can be referenced from relationship tables normally:<codeblock>&lt;reltable>
+  &lt;relrow>
+   &lt;relcell>
+     &lt;topicref keyref="indirector-topic123-fig-01"/>
+   &lt;/relcell>
+   &lt;relcell>
+     &lt;topicref keyref="indirector-topic123-step-02"/>
+   &lt;/relcell>
+  &lt;/relrow>
+&lt;/reltable></codeblock></p>
+    </body>
+  </topic>
+  <topic id="topic_opn_2f1_mp">
+    <title>Generating HTML and PDF Deliverables</title>
+    <body>
+      <draft-comment author="ekimber">Discuss the details of HTML and PDF generation, in particular,  how to resolve the indirection to produce the final result link.</draft-comment>
+    </body>
+  </topic>
+</topic>
