@@ -1,0 +1,9 @@
+[submodule "org.dita-community.indirectortopic.doctypes"]
+	path = org.dita-community.indirectortopic.doctypes
+	url = https://github.com/drmacro/org.dita-community.indirectortopic.doctypes.git
+[submodule "org.dita-community.indirectortopic.html"]
+	path = org.dita-community.indirectortopic.html
+	url = https://github.com/drmacro/org.dita-community.indirectortopic.html.git
+[submodule "org.dita-community.indirectortopic.pdf"]
+	path = org.dita-community.indirectortopic.pdf
+	url = https://github.com/drmacro/org.dita-community.indirectortopic.pdf.git

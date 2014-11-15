@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Simple Relationship Table</title>
+  <reltable>
+    <relheader>
+      <relcolspec >
+        <title>RelCol 1</title>
+      </relcolspec>
+      <relcolspec >
+        <title>RelCol 2</title>
+      </relcolspec>
+    </relheader>
+    <relrow>
+      <relcell>
+        <topicref/>
+      </relcell>
+      <relcell>
+        <topicref/>
+      </relcell>
+    </relrow>
+  </reltable>
+</map>
