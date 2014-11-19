@@ -98,7 +98,7 @@
 	<target name="deploy-toolkit-plugins" depends="dist-toolkit-plugins"
 	  description="Deploy plugins to local DITA Open Toolkit">
 		<delete failonerror="true" includeemptydirs="true">
-			<fileset dir="${plugin-deploy_target}" includes="org.dita-community.*/**">
+			<fileset dir="${plugin-deploy_target}" includes="org.dita-community.indirectortopic.*/**">
 			</fileset>
 		</delete>
 		<mkdir dir="${plugin-deploy_target}"/>

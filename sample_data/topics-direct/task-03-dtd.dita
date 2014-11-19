@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:dita-community.org:doctypes:dita:task+indirector" "task.dtd">
+<task id="task_yms_xvc_cq">
+    <title>Task 03</title>
+    <shortdesc>This is task 03, a short task.</shortdesc>
+    <taskbody>
+        <context>
+            <p>To accomplish some task:</p>
+        </context>
+        <steps>
+            <step
+        id="step-01">
+        <cmd>Topic 03, step 01. Do something...</cmd>
+      </step>
+      <step
+        id="step-02">
+        <cmd>Do another thing...</cmd>
+        <info>This <xref
+          keyref="task-02/step-01">other step</xref> is related to this one...</info>
+      </step>
+      <step
+        id="step-03">
+        <cmd>And do the last thing...</cmd>
+      </step>
+        </steps>
+    <result>It should work.</result>
+    </taskbody>
+</task>

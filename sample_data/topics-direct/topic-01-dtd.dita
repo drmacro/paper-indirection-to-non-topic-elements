@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:dita-community.org:doctypes:dita:topic+indirector" "topic+indirector.dtd" >
+<topic id="topic_xlb_nvc_cq">
+  <title>Topic 01</title>
+  <body>
+    <p>This is topic 01.</p>
+    <fig
+      id="fig-01">
+      <title>Sample Figure in Topic 01</title>
+      <image
+        keyref="image-01"
+        id="image_hmx_vfz_cq"/>
+    </fig>
+    <p>Here is an xref within the brackets:[<xref
+      keyref="task-02/step-01"
+      id="image_gmw_yfz_cq">This step</xref>].</p>
+  </body>
+</topic>

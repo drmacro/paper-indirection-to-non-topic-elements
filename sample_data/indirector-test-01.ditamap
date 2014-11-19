@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Indirector Test Map 01 (Indirect)</title>
+  <topicgroup>
+    <keydef
+      href="topics-indirect/indirector-01-dtd.xml"
+      keys="indirector-01"/>
+    <keydef
+      href="topics-indirect/indirectorset-01-dtd.xml#ind-02"
+      keys="indirector-02"/>
+    <keydef
+      href="topics-indirect/indirectorset-01-dtd.xml#ind-03"
+      keys="indirector-03"/>
+    <keydef
+      href="topics-indirect/indirector-02-dtd.xml"
+      keys="indirector-04"/>
+    <keydef
+      href="topics-indirect/indirector-03-dtd.xml"
+      keys="indirector-05"/>
+  </topicgroup>
+  <topicref
+    href="topics-indirect/topic-01-dtd.dita"
+    keys="topic-01"/>
+  <topicref
+    href="topics-indirect/task-02-dtd.dita"
+    keys="task-02"/>
+  <topicref
+    href="topics-indirect/task-03-dtd.dita"
+    keys="task-03"/>
+  
+  <reltable
+    title="Indirector Test 01">
+    <relheader>
+      <relcolspec>
+        <topicmeta>
+          <navtitle>Anchor Role 01</navtitle>
+        </topicmeta>
+      </relcolspec>
+      <relcolspec>
+        <topicmeta>
+          <navtitle>Anchor Role 02</navtitle>
+        </topicmeta>
+      </relcolspec>
+    </relheader>
+    <relrow>
+      <relcell>
+        <topicref
+          keyref="indirector-01"/>
+      </relcell>
+      <relcell>
+        <topicref
+          keyref="indirector-02"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref
+          keyref="indirector-02"/>
+      </relcell>
+      <relcell>
+        <topicref
+          keyref="indirector-03"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref
+          keyref="indirector-03"/>
+      </relcell>
+      <relcell>
+        <topicref
+          keyref="indirector-04"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref
+          keyref="indirector-02"/>
+      </relcell>
+      <relcell>
+        <topicref
+          keyref="indirector-05"/>
+      </relcell>
+    </relrow>
+  </reltable>
+</map>

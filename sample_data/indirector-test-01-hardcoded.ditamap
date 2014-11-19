@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Indirector Test Map 01 (Direct)</title>
+  <topicgroup>
+    <keydef keys="image-01" format="png" href="media/2014-09-18_20.38.04.png">
+      <topicmeta>
+        <navtitle>The chicken hotel</navtitle>
+      </topicmeta>
+    </keydef>
+  </topicgroup>
+  <topicref
+    href="topics-direct/topic-01-dtd.dita"
+    keys="topic-01"/>
+  <topicref
+    href="topics-direct/task-02-dtd.dita"
+    keys="task-02"/>
+  <topicref
+    href="topics-direct/task-03-dtd.dita"
+    keys="task-03"/>
+  
+</map>
